@@ -1,10 +1,15 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
   });
-  
-  console.log("Hello from Rainier Lex Alberto's portfolio! 👋");
+});
+
+const toggleBtn = document.getElementById('themeToggle');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+});
+
+console.log("Portfolio loaded successfully!");
